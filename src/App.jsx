@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from "react";
 import './App.css'
+import IridescentWavesBackground from "./components/background";
 
-function App() {
-  const [count, setCount] = useState(0)
 
+export default function Landing() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="page-root">
+         <IridescentWavesBackground />
+      <nav className="nav">
+        <div className="brand">Astromeria</div>
+        <div className="nav-links">
+          <a href="#">Soluciones</a>
+          <a href="#">Sobre Nosotras</a>
+        </div>
+        <button className="cta">Contáctanos</button>
+      </nav>
 
-export default App
+      <header className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Un nuevo comienzo<br />lleno de posibilidades
+          </h1>
+          <p className="hero-sub">
+            Creamos marcas y contenido digital con diseño inteligente impulsado por IA,
+            para que tu emprendimiento se vea profesional y pueda crecer con solidez.
+          </p>
+          <button className="hero-btn">Comienza hoy</button>
+        </div>
+      </header>
+    </div>
+  );
+}
