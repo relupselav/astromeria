@@ -1,33 +1,35 @@
-import React from "react";
-import './App.css'
-import IridescentWavesBackground from "./components/background";
+import Navbar from "./components/Navbar";
+import Hero from "./pages/Hero";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import IridescentBackground from "./components/background";
 
-
-export default function Landing() {
+export default function App() {
   return (
-    <div className="page-root">
-         <IridescentWavesBackground />
-      <nav className="nav">
-        <div className="brand">Astromeria</div>
-        <div className="nav-links">
-          <a href="#">Soluciones</a>
-          <a href="#">Sobre Nosotras</a>
-        </div>
-        <button className="cta">Contáctanos</button>
-      </nav>
+    <div className="relative min-h-screen overflow-x-hidden text-black">
 
-      <header className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Un nuevo comienzo<br />lleno de posibilidades
-          </h1>
-          <p className="hero-sub">
-            Creamos marcas y contenido digital con diseño inteligente impulsado por IA,
-            para que tu emprendimiento se vea profesional y pueda crecer con solidez.
-          </p>
-          <button className="hero-btn">Comienza hoy</button>
-        </div>
-      </header>
+      <Navbar />
+     {/* BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        <IridescentBackground bubbles={16} />
+      </div>
+      <section id="hero" className="pt-24">
+        <Hero />
+      </section>
+
+      <section id="services" className="pt-24">
+        <Services />
+      </section>
+
+      <section id="about" className="pt-24">
+        <About />
+      </section>
+
+       <section id="contact" className="pt-24">
+   <Contact />
+       </section>
+
     </div>
   );
 }

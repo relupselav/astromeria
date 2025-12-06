@@ -1,52 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&display=swap");
+@import "tailwindcss";
 
-:root {
-  font-family: "Instrument Sans", sans-serif;
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  color: black;
 }
 
-/* Reset útil */
-
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+.iridescent-hover {
+  position: relative;
+  transition: color 0.25s ease;
+  border-radius: 9999px; /* igual que rounded-full */
+  padding: 0.35rem 0.75rem; /* da el mismo look del hover en botón */
+  overflow: hidden; /* asegura que el brillo no se desborde */
 }
 
-.blob-bg {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.blob {
+.iridescent-hover::after {
+  content: "";
   position: absolute;
-  width: 60vw;
-  opacity: 0.45;
-  filter: blur(70px);
+  inset: 0;
+  z-index: -1;
+
+  border-radius: 9999px; /* coincide con el botón */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 190, 245, 0.7) 35%,
+    rgba(150, 120, 255, 0.55) 65%,
+    rgba(110, 165, 255, 0.45) 90%
+  );
 }
 
-.blob1 {
-  top: -10%;
-  left: -10%;
-  animation: float1 18s ease-in-out infinite;
+
+/* Hover sin borde */
+.iridescent-hover:hover {
+  color: black;
+  border-color: transparent;
 }
 
-.blob2 {
-  bottom: -10%;
-  right: -10%;
-  animation: float2 22s ease-in-out infinite;
-}
-
-@keyframes float1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10%, 10%) scale(1.1); }
-}
-
-@keyframes float2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-10%, -10%) scale(1.15); }
+.iridescent-hover:hover::after {
+  opacity: 1;
+  transform: scale(1.18);
 }
