@@ -7,14 +7,14 @@ export default function Navbar() {
 
       {/* Center links */}
       <div className="hidden md:flex gap-10 text-black">
-        <a href="#services" className="iridescent-hover px-2 py-1 rounded-md">Soluciones</a>
-        <a href="#about" className="iridescent-hover px-2 py-1 rounded-md">Sobre Nosotras</a>
+        <a href="#services" className="iridescent-underline px-2 py-1 rounded-md">Soluciones</a>
+        <a href="#about" className="iridescent-underline px-2 py-1 rounded-md">Sobre Nosotras</a>
       </div>
 
       {/* Button */}
       <a
         href="#contact"
-        className="iridescent-hover border border-black rounded-full text-black"
+        className="px-5 py-2 border border-black rounded-full hover:bg-black hover:text-white text-black transition"
       >
         Contáctanos
       </a>
